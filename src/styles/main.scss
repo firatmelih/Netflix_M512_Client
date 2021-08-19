@@ -1,0 +1,10 @@
+:root {
+  --main-background-color: #141414;
+  --main-color: #e5e5e5;
+  --main-color-hover: #b3b3b3;
+}
+
+body {
+  //   background-image: url("https://images.alphacoders.com/112/1127039.jpg");
+  background-color: var(--main-background-color);
+}

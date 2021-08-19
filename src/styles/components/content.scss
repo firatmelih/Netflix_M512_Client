@@ -1,0 +1,175 @@
+.Content {
+  color: var(--main-color);
+  margin: 3vw 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  h2 {
+    font-size: 1.4vw;
+    color: #e5e5e5;
+    font-weight: 700;
+    margin: 0 4% 0.5em 3%;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 6em;
+  }
+  .cover-container {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    position: absolute;
+    left: 0;
+    padding: 0 55px;
+    display: flex;
+    flex-direction: row;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    .container-item {
+      transition: 0.5s;
+
+      img {
+        height: 150px;
+        border-radius: 7.5px;
+      }
+      video {
+        height: 150px;
+        border-radius: 7.5px 7.5px 0 0;
+      }
+
+      &.true {
+        &:nth-child(1) {
+          transform: scale(1.5, 1.5);
+          padding-left: 55px;
+          position: flex;
+          z-index: 3;
+        }
+        transform: scale(1.5, 1.5);
+        position: flex;
+        z-index: 3;
+
+        img {
+          border-radius: 7.5px 7.5px 0 0;
+        }
+      }
+      &.false {
+        position: flex;
+      }
+      box-sizing: border-box;
+      z-index: 1;
+      display: block;
+      position: relative;
+      white-space: normal;
+      vertical-align: top;
+      padding: 0 2px;
+      .item-data-true {
+        margin: 0;
+        padding: 0;
+        border-radius: 0 0 7.5px 7.5px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+          rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+        .buttons-area {
+          display: flex;
+          justify-content: space-between;
+          .left {
+            display: flex;
+            & > div {
+              cursor: pointer;
+            }
+            .play-button {
+              margin: 10px 3px 10px 10px;
+              border-radius: 100px !important;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: var(--main-color);
+              height: 27px;
+              width: 27px;
+              color: black;
+              &:hover {
+                background-color: gray;
+              }
+            }
+            .left-button {
+              margin: 10px 3px 10px 3px;
+              border-radius: 100px !important;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: var(--main-background-color);
+              height: 26px;
+              border: 1px solid gray;
+              width: 26px;
+              color: white;
+              &:hover {
+                border: 1px solid white;
+              }
+            }
+          }
+          .right {
+            & > div {
+              cursor: pointer;
+            }
+            .right-button {
+              margin: 10px 10px 10px 10px;
+              border-radius: 100px !important;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: var(--main-background-color);
+              height: 26px;
+              border: 1px solid gray;
+              width: 26px;
+              color: white;
+              &:hover {
+                border: 1px solid white;
+              }
+            }
+          }
+        }
+        .item-info {
+          span {
+            &:nth-child(1) {
+              margin: 10px 0.5px 10px 10px !important;
+            }
+            &.match {
+              color: rgb(49, 149, 49);
+              font-weight: 500;
+            }
+            &.age {
+              border: 0.5px solid var(--main-color);
+              padding: 1px 3px 1px 3px;
+            }
+            &.HD {
+              border: 0.5px solid var(--main-color);
+              padding: 1px 3px 1px 3px;
+              font-size: 8px;
+              font-weight: 500;
+            }
+            margin: 10px 0.5px 0.5px 10px;
+            margin-left: 3px !important;
+            font-size: 11px;
+          }
+        }
+        .item-categories {
+          ul {
+            display: flex;
+            font-size: 11px;
+            li {
+              margin: 10px 10px 15px 10px;
+
+              &:nth-child(1) {
+                margin: 10px 10px 15px -30px;
+                list-style: none;
+              }
+            }
+          }
+        }
+      }
+      .item-data-false {
+        display: none;
+      }
+    }
+  }
+}
