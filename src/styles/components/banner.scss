@@ -1,0 +1,55 @@
+.Banner {
+  color: var(--main-background-color);
+  img {
+    padding: 150px;
+    padding-top: 100px;
+  }
+  h2 {
+    font-weight: 1000;
+    padding-left: 150px;
+    font-size: 100px;
+    width: 25%;
+  }
+  p {
+    margin-left: 150px !important;
+    font-size: larger;
+    width: 550px;
+  }
+  .buttons-div {
+    padding-top: 25px;
+    display: flex;
+    padding-left: 150px;
+    button {
+      cursor: pointer;
+      border-radius: 5px;
+      border: none;
+      width: 130px;
+      margin: 15px;
+      height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: 0.2s;
+      span {
+        font-weight: 800;
+        font-size: large;
+        padding-left: 15px;
+      }
+      &:nth-child(1) {
+        background-color: white;
+        color: black;
+        &:hover {
+          background-color: rgb(228, 228, 228);
+        }
+      }
+      &:nth-child(2) {
+        width: 175px;
+        background-color: rgba(228, 228, 228, 0.648);
+        &:hover {
+          background-color: rgba(228, 228, 228, 0.42);
+        }
+      }
+    }
+  }
+}

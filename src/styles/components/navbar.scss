@@ -1,8 +1,15 @@
+.NavbarContains {
+  background-image: url("https://cdn.discordapp.com/attachments/750658674078253158/878309678063452170/banner.jpg") !important;
+  background-repeat: no-repeat;
+  height: 1100px;
+}
 .Navbar {
+  transition: 0.5s;
+  position: fixed;
+  width: 100%;
+  top: 0;
   color: var(--main-color);
   height: 70px;
-  top: 0px;
-  position: relative;
   display: flex;
   justify-content: space-between;
   /* background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,rgba(0,0,0,.7)),color-stop(10%,rgba(0,0,0,0))); */
