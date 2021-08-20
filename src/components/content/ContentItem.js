@@ -2,26 +2,51 @@ import React, { useState } from "react";
 import { Add, PlayArrow, ThumbUpOutlined } from "@material-ui/icons";
 import ThumbDownOutlinedIcon from "@material-ui/icons/ThumbDownOutlined";
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
+import VolumeUpIcon from "@material-ui/icons/VolumeUp";
+import VolumeOffIcon from "@material-ui/icons/VolumeOff";
 export const ContentItem = (props) => {
   const [isFocused, setIsFocused] = useState(false);
+  const [mute, setMute] = useState(true);
   return (
     <div
-      onMouseEnter={(e) => {
-        setIsFocused(true);
-      }}
       onMouseLeave={(e) => {
         setIsFocused(false);
       }}
       className={`container-item ${isFocused}`}
     >
       {isFocused ? (
-        <video autoPlay={true}>
-          <source src={props.srcVideo} type="video/mp4" />
-        </video>
+        <div
+          onMouseEnter={(e) => {
+            setIsFocused(true);
+          }}
+        >
+          <video muted={mute} autoPlay={true}>
+            <source src={props.srcVideo} type="video/mp4" />
+          </video>
+          <div
+            style={{ cursor: "pointer" }}
+            className="mute-button"
+            onClick={() => {
+              setMute(!mute);
+            }}
+          >
+            {mute ? <VolumeOffIcon /> : <VolumeUpIcon />}
+          </div>
+        </div>
       ) : (
-        <img src={props.src} />
+        <img
+          onMouseEnter={(e) => {
+            setIsFocused(true);
+          }}
+          src={props.src}
+        />
       )}
-      <div className={`item-data-${isFocused}`}>
+      <div
+        onMouseLeave={(e) => {
+          setIsFocused(false);
+        }}
+        className={`item-data-${isFocused}`}
+      >
         <div className="buttons-area">
           <div className="left">
             <div className="play-button">

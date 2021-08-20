@@ -7,4 +7,10 @@
 body {
   //   background-image: url("https://images.alphacoders.com/112/1127039.jpg");
   background-color: var(--main-background-color);
+  // overflow: scroll;
+  // -ms-overflow-style: none !important; /* IE and Edge */
+  // scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow-x: hidden;
 }
