@@ -19,6 +19,12 @@
     padding-top: 25px;
     display: flex;
     padding-left: 150px;
+    a {
+      text-decoration: none;
+      &:visited {
+        text-decoration: none !important;
+      }
+    }
     button {
       cursor: pointer;
       border-radius: 5px;

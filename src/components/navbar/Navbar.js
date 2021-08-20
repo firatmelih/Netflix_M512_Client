@@ -1,10 +1,18 @@
 import "../../styles/components/navbar.scss";
 import Banner from "../banner/Banner";
 import React, { useState } from "react";
-import { Search, Notifications, DetailsTwoTone } from "@material-ui/icons";
+import {
+  Search,
+  Notifications,
+  DetailsTwoTone,
+  VolumeOff,
+  VolumeUp,
+} from "@material-ui/icons";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [hover, setHover] = useState(false);
+  const [mute, setMute] = useState(true);
   window.addEventListener("scroll", (event) => {
     if (window.pageYOffset > 0) {
       setScrolled(true);
@@ -13,7 +21,44 @@ export const Navbar = () => {
     }
   });
   return (
-    <div className="NavbarContains">
+    <div
+      onMouseEnter={() => {
+        console.log(hover);
+        setHover(true);
+      }}
+      onMouseLeave={() => {
+        console.log(hover);
+        setHover(false);
+      }}
+      className="NavbarContains"
+      // style={hover?backgroundImage:{}}
+    >
+      {hover ? (
+        <div>
+          <video className="backGround" muted={mute} autoPlay={true} loop>
+            <source src={`/video/banner.mp4`} type="video/mp4" />
+          </video>
+          <div
+            style={{ cursor: "pointer" }}
+            className="mute-button-banner"
+            onClick={() => {
+              setMute(!mute);
+            }}
+          >
+            {mute ? (
+              <VolumeOff fontSize="large" />
+            ) : (
+              <VolumeUp fontSize="large" />
+            )}
+          </div>
+        </div>
+      ) : (
+        <img
+          className="backGround"
+          src="/image/banner.jpg"
+          style={{ zIndex: "-1" }}
+        />
+      )}
       <div
         onClick={(e) => {
           console.log(e);
@@ -83,7 +128,7 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-      <Banner />
+      <Banner hover={hover} />
     </div>
   );
 };

@@ -36,71 +36,85 @@ export const Content = () => {
         >
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={1}
             srcVideo={"/video/content1.mp4"}
             src={"/image/content1.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
@@ -149,71 +163,85 @@ export const Content = () => {
         >
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={1}
             srcVideo={"/video/content1.mp4"}
             src={"/image/content1.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
@@ -262,71 +290,85 @@ export const Content = () => {
         >
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={1}
             srcVideo={"/video/content1.mp4"}
             src={"/image/content1.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />
           <ContentItem
             movieName={"Bio Hackers"}
+            id={2}
             srcVideo={"/video/content2.mp4"}
             src={"/image/content2.jpg"}
           />

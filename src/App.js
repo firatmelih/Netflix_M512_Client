@@ -1,12 +1,9 @@
 import "./styles/main.scss";
 import { Home } from "./pages/home/Home";
+import AuthorizedRoutes from "./routes/AuthorizedRoutes";
 
 function App() {
-  return (
-    <div className="App">
-      <Home/>
-    </div>
-  );
+  return <AuthorizedRoutes />;
 }
 
 export default App;

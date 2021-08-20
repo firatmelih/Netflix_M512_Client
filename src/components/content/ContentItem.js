@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Add, PlayArrow, ThumbUpOutlined } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 import ThumbDownOutlinedIcon from "@material-ui/icons/ThumbDownOutlined";
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 import VolumeUpIcon from "@material-ui/icons/VolumeUp";
@@ -20,11 +21,13 @@ export const ContentItem = (props) => {
             setIsFocused(true);
           }}
         >
-          <video muted={mute} autoPlay={true}>
-            <source src={props.srcVideo} type="video/mp4" />
-          </video>
+          <Link exact to={`/watch/${props.id}`}>
+            <video muted={mute} autoPlay={true}>
+              <source src={props.srcVideo} type="video/mp4" />
+            </video>
+          </Link>
           <div
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer", zIndex: "155" }}
             className="mute-button"
             onClick={() => {
               setMute(!mute);
@@ -50,7 +53,9 @@ export const ContentItem = (props) => {
         <div className="buttons-area">
           <div className="left">
             <div className="play-button">
-              <PlayArrow />
+              <Link exact to={`/watch/${props.id}`}>
+                <PlayArrow />
+              </Link>
             </div>
             <div className="left-button">
               <Add />

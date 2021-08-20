@@ -1,0 +1,22 @@
+.Watch {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  .back {
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    color: gray !important;
+    &:hover {
+      color: white !important;
+    }
+    z-index: 155;
+  }
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

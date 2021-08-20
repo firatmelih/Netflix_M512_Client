@@ -1,8 +1,24 @@
 .NavbarContains {
-  background-image: url("https://cdn.discordapp.com/attachments/750658674078253158/878309678063452170/banner.jpg") !important;
+  // background-image: url("https://cdn.discordapp.com/attachments/750658674078253158/878309678063452170/banner.jpg") !important;
   background-repeat: no-repeat;
   height: 1100px;
+  .backGround {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
 }
+
+.videoPlay {
+  h2 {
+    color: white !important;
+  }
+}
+
 .Navbar {
   transition: 0.5s;
   position: fixed;
@@ -123,5 +139,27 @@
         }
       }
     }
+  }
+}
+
+.mute-button-banner {
+  color: white;
+  border-radius: 100px !important;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 150px;
+  margin-right: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  border: 2px solid gray;
+  width: 35px;
+  color: gray;
+  &:hover {
+    z-index: 34343;
+    color: white;
+    border: 2px solid white;
   }
 }
