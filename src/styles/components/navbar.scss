@@ -126,7 +126,6 @@
           transition: 0.5s !important;
           cursor: pointer;
           margin-left: 5px;
-          font-size: small;
           stroke: var(--main-color);
           fill: var(--main-color);
           path {
@@ -145,7 +144,7 @@
 .mute-button-banner {
   color: white;
   border-radius: 100px !important;
-  position: fixed;
+  position: absolute;
   right: 0;
   bottom: 0;
   margin-bottom: 150px;

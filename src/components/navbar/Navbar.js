@@ -5,6 +5,7 @@ import {
   Search,
   Notifications,
   DetailsTwoTone,
+  ArrowDropDown,
   VolumeOff,
   VolumeUp,
 } from "@material-ui/icons";
@@ -123,7 +124,7 @@ export const Navbar = () => {
                 src="https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png"
                 alt=""
               />
-              <DetailsTwoTone fontSize="small" />
+              <ArrowDropDown style={{ fontSize: "large" }} fontSize="large" />
             </div>
           </div>
         </div>
