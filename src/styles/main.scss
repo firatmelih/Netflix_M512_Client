@@ -3,6 +3,18 @@
   --main-color: #e5e5e5;
   --main-color-hover: #b3b3b3;
 }
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
 
 body {
   //   background-image: url("https://images.alphacoders.com/112/1127039.jpg");

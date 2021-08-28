@@ -1,8 +1,13 @@
 .Banner {
   color: var(--main-background-color);
+  div {
+    h2 {
+      font-size: 5vw !important;
+    }
+  }
   img {
-    padding: 150px;
-    padding-top: 100px;
+    padding: 10% 5% 5% 5%;
+    padding-top: 5vw;
   }
   h2 {
     font-weight: 1000;

@@ -1,19 +1,28 @@
 import "../../styles/pages/watch.scss";
-import React from "react";
+import React, { useState } from "react";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { Link } from "react-router-dom";
 
 const Watch = () => {
+  const [visible, setVisible] = useState(false);
   const id = window.location.pathname.substr(
     window.location.pathname.lastIndexOf("/") + 1,
     window.location.pathname.length
   );
-  console.log(id);
   return (
     <div className="Watch">
       <Link to="/">
-        <div className="back">
+        <div
+          onMouseEnter={() => {
+            setVisible(true);
+          }}
+          onMouseLeave={() => {
+            setVisible(false);
+          }}
+          className="back"
+        >
           <ArrowBackIcon fontSize="large" />
+          {visible ? <div className="text">Back to Browse</div> : null}
         </div>
       </Link>
 

@@ -12,20 +12,36 @@ const localize = [
   {
     locale: "en",
     sign_in: "Sign In",
-    h1: "Unlimited movies, TV shows, and more.",
-    h2: "Watch anywhere. Cancel anytime.",
-    h3: "Ready to watch? Enter your email to create or restart your membership.",
-    label: "Email adress",
-    get_started: "Get Started",
+    email: "Email or phone number",
+    password: "Password",
+    remember_me: "Remember me",
+    need_help: "Need help?",
+    new: "New to Netflix?",
+    sign_up: "Sign up now",
+    question: "Questions? Call 1234-567-000",
+    faq: "FAQ",
+    help_center: "Help Center",
+    terms: "Terms of Use",
+    privacy: "Privacy",
+    cookies: "Cookie Preferences",
+    ci: "Corporate Information",
   },
   {
     locale: "tr",
     sign_in: "Oturum Aç",
-    h1: "Sınırsız film, dizi ve çok daha fazlası.",
-    h2: "İstediğiniz yerde izleyin. İstediğiniz zaman iptal edin.",
-    h3: "İzlemeye hazır mısınız? Üyelik oluşturmak veya üyeliğinize erişmek için e‑posta adresinizi girin.",
-    label: "E-posta adresi",
-    get_started: "Başlayın",
+    email: "E‑posta veya telefon numarası",
+    password: "Parola",
+    remember_me: "Beni hatırla",
+    need_help: "Yardım ister misiniz?",
+    new: "Netflix'e katılmak ister misiniz?",
+    sign_up: "Şimdi kaydolun",
+    question: "Sorularınız mı var? 1234-567-000",
+    faq: "SSS",
+    help_center: "Yardım Merkezi",
+    terms: "Kullanım Koşulları",
+    privacy: "Gizlilik",
+    cookies: "Çerez Tercihleri",
+    ci: "Kurumsal Bilgiler",
   },
 ];
 
@@ -71,11 +87,11 @@ const Login = (props) => {
       </div>
       <div className="inputs-area">
         <div className="login-form">
-          <h2>Sign In</h2>
+          <h2>{localize[props.language - 1].sign_in}</h2>
           <TextField
             className="Input"
             id="filled-basic"
-            label={localize[props.language - 1].label}
+            label={localize[props.language - 1].email}
             variant="filled"
             name="email"
             value={input.email}
@@ -85,7 +101,7 @@ const Login = (props) => {
           <TextField
             className="Input"
             id="filled-basic"
-            label="Password"
+            label={localize[props.language - 1].password}
             variant="filled"
             name="password"
             value={input.password}
@@ -96,29 +112,30 @@ const Login = (props) => {
         <div className="links">
           <div className="remember-me">
             <input type="checkbox" />
-            <span>Remember me</span>
+            <span>{localize[props.language - 1].remember_me}</span>
           </div>
           <div className="need-help">
-            <span>Need help?</span>
+            <span>{localize[props.language - 1].need_help}</span>
           </div>
         </div>
         <div className="register">
-          New to Netflix? <Link to="/register">Sign up now.</Link>
+          {localize[props.language - 1].new}
+          <Link to="/register">{localize[props.language - 1].sign_up}</Link>.
         </div>
       </div>
 
       <div className="Footer">
         <div className="footer-items">
-          <p>Questions? Call 1234-5678-000</p>
+          <p>{localize[props.language - 1].question}</p>
 
           <div className="footer-elements">
             <ul>
-              <li>FAQ</li>
-              <li>Help Center</li>
-              <li>Terms of Use</li>
-              <li>Privacy</li>
-              <li>Cookie Preferences</li>
-              <li>Corporate Information</li>
+              <li>{localize[props.language - 1].faq}</li>
+              <li>{localize[props.language - 1].help_center}</li>
+              <li>{localize[props.language - 1].terms}</li>
+              <li>{localize[props.language - 1].privacy}</li>
+              <li>{localize[props.language - 1].cookies}</li>
+              <li>{localize[props.language - 1].ci}</li>
             </ul>
           </div>
 
