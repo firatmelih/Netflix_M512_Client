@@ -3,6 +3,7 @@ import { Select, MenuItem, TextField } from "@material-ui/core";
 import LanguageIcon from "@material-ui/icons/Language";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
 
 const localize = [
@@ -26,12 +27,16 @@ const localize = [
   },
 ];
 
-const Register = () => {
+const Register = (props) => {
   const [input, setInput] = useState({
     language: 1,
+    email: "",
   });
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
+  };
+  const handleLanguageChange = (e) => {
+    props.setLanguage(e.target.value);
   };
   return (
     <div className="Register">
@@ -47,33 +52,39 @@ const Register = () => {
             labelId="drop-down"
             name="language"
             id="demo-simple-select-filled"
-            value={input.language}
-            onChange={handleChange}
+            value={props.language}
+            onChange={handleLanguageChange}
           >
             <option value={1}>English</option>
             <option value={2}>Türkçe</option>
           </Select>
 
-          <div className="button">{localize[input.language - 1].sign_in}</div>
+          <Link to="/login">
+            <div className="button">{localize[props.language - 1].sign_in}</div>
+          </Link>
         </div>
       </div>
 
       <div className="image-wrapper">
-        <img src={`/image/${localize[input.language - 1].locale}.jpg`} />
+        <img src={`/image/${localize[props.language - 1].locale}.jpg`} />
       </div>
       <div className="inputs-area">
-        <h1>{localize[input.language - 1].h1}</h1>
-        <h2>{localize[input.language - 1].h2}</h2>
-        <h3>{localize[input.language - 1].h3}</h3>
+        <h1>{localize[props.language - 1].h1}</h1>
+        <h2>{localize[props.language - 1].h2}</h2>
+        <h3>{localize[props.language - 1].h3}</h3>
         <div className="email-area">
           <TextField
             className="Input"
             id="filled-basic"
-            label={localize[input.language - 1].label}
+            label={localize[props.language - 1].label}
             variant="filled"
+            name="email"
+            value={input.email}
+            onChange={handleChange}
           />
           <div className="button">
-            {localize[input.language - 1].get_started} <ChevronRightIcon />
+            {localize[props.language - 1].get_started}{" "}
+            <ChevronRightIcon fontSize="large" />
           </div>
         </div>
       </div>
