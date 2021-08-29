@@ -1,5 +1,4 @@
-import "../../styles/pages/login.scss";
-import "../../styles/pages/register.scss";
+import "../../styles/pages/register2.scss";
 
 import { Select, MenuItem, TextField } from "@material-ui/core";
 import LanguageIcon from "@material-ui/icons/Language";
@@ -25,6 +24,9 @@ const localize = [
     privacy: "Privacy",
     cookies: "Cookie Preferences",
     ci: "Corporate Information",
+    end_up: "Finish Up",
+    almost_done: "2/2 Almost Done",
+    set_password: "Now set a password",
   },
   {
     locale: "tr",
@@ -42,10 +44,13 @@ const localize = [
     privacy: "Gizlilik",
     cookies: "Çerez Tercihleri",
     ci: "Kurumsal Bilgiler",
+    end_up: "Kaydı Tamamla",
+    almost_done: "2/2 Neredeyse Tamam",
+    set_password: "Şimdi bir parola oluşturun",
   },
 ];
 
-const Login = (props) => {
+const Register2 = (props) => {
   const [input, setInput] = useState({
     language: 1,
     email: "",
@@ -58,52 +63,43 @@ const Login = (props) => {
     props.setLanguage(e.target.value);
   };
   return (
-    <div className="Login Register">
+    <div style={{ background: "white" }} className="Login Register2">
       <div className="Navbar">
         <div className="left">
           <img src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg" />
         </div>
+        <div className="right">
+          <Link to="/login">
+            <div className="button">{localize[props.language - 1].sign_in}</div>
+          </Link>
+        </div>
       </div>
-
-      <div className="image-wrapper">
-        <img src={`/image/${localize[props.language - 1].locale}.jpg`} />
-      </div>
-      <div className="inputs-area">
+      <div className="inputs-area1">
         <div className="login-form">
-          <h2>{localize[props.language - 1].sign_in}</h2>
+          <p>{localize[props.language - 1].almost_done}</p>
+          <h3>{localize[props.language - 1].set_password}</h3>
           <TextField
             className="Input"
             id="filled-basic"
             label={localize[props.language - 1].email}
-            variant="filled"
+            variant="outlined"
             name="email"
-            value={input.email}
-            onChange={handleChange}
+            value={props.email}
+            onChange={(e) => {
+              props.setEmail(e.target.value);
+            }}
           />
           <br />
           <TextField
             className="Input"
             id="filled-basic"
             label={localize[props.language - 1].password}
-            variant="filled"
+            variant="outlined"
             name="password"
             value={input.password}
             onChange={handleChange}
           />
-          <div className="button">{localize[props.language - 1].sign_in}</div>
-          <div className="links">
-            <div className="remember-me">
-              <input type="checkbox" />
-              <span>{localize[props.language - 1].remember_me}</span>
-            </div>
-            <div className="need-help">
-              <span>{localize[props.language - 1].need_help}</span>
-            </div>
-          </div>
-          <div className="register">
-            {localize[props.language - 1].new}
-            <Link to="/register">{localize[props.language - 1].sign_up}</Link>.
-          </div>
+          <div className="button">{localize[props.language - 1].end_up}</div>
         </div>
       </div>
 
@@ -144,4 +140,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default Register2;

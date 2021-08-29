@@ -197,6 +197,7 @@
           margin: 0;
         }
         width: 26vw;
+        min-width: 325px;
         height: 70px;
         background-color: white;
         & > label,
@@ -213,11 +214,14 @@
         cursor: pointer;
         border-top-left-radius: 0;
         border-left: 1px solid #333;
-        font-size: 1.875rem;
-        min-height: 70px;
+        font-size: 1.475rem;
+        min-width: 150px;
+        width: 12vw;
+        max-height: 70px;
+        min-height: 70px !important;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
         background-color: #d80913;
         color: white;
         line-height: normal;
@@ -226,13 +230,13 @@
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;
-        padding-left: 33px;
+        padding: 0;
         &:hover {
           background-color: #ff000d;
         }
         float: right;
         & > * {
-          padding-right: 25px;
+          padding-right: 0;
         }
       }
     }
@@ -241,9 +245,33 @@
     height: 1000px;
     width: 100vw;
     background-color: black;
+    color: white;
   }
 }
 
 .Mui-focused {
   font-weight: 600 !important;
+}
+
+.register-footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  h2 {
+    padding: 15px;
+    color: aqua;
+  }
+  p {
+    z-index: 99999999;
+    a {
+      text-decoration: none;
+      color: aqua;
+      z-index: 99999999;
+    }
+  }
 }

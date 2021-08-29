@@ -15,6 +15,13 @@ const localize = [
     h3: "Ready to watch? Enter your email to create or restart your membership.",
     label: "Email adress",
     get_started: "Get Started",
+
+    h22: "This App is For Learning",
+    p1: "Reason I code this app was for warming myself up and learning new features of React Js and also showing employers what I can make.",
+    p2: "This App does not make any profit.",
+    p3: "All the contents you will see in this App are actually trailer videos imported from YouTube.",
+    p4: "If you want to contact feel free to visit my",
+    p5: "by Melih Fırat aka M512 to you",
   },
   {
     locale: "tr",
@@ -24,16 +31,20 @@ const localize = [
     h3: "İzlemeye hazır mısınız? Üyelik oluşturmak veya üyeliğinize erişmek için e‑posta adresinizi girin.",
     label: "E-posta adresi",
     get_started: "Başlayın",
+
+    h22: "Bu Uygulama Öğrenim Amaçlıdır",
+    p1: "Bu uygulamayı yazmaktaki neden paslanmamak, React Js'in yeni özelliklerini öğrenmek ve iş görüşmelerinde ne yapabileceğimi göstermektir.",
+    p2: "Bu uygulama kâr amacı gütmemektedir.",
+    p3: "Aslında bu uygulamada göreceğiniz bütün içerikler YouTube'dan yüklenmiş fragman videolarıdır.",
+    p4: "Eğer iletişime geçmek isterseniz çekinmeyin",
+    p44: "hesabımı ziyaret edin.",
+    p5: "Melih 'M512' Fırat tarafından sizlere ",
   },
 ];
 
 const Register = (props) => {
-  const [input, setInput] = useState({
-    language: 1,
-    email: "",
-  });
   const handleChange = (e) => {
-    setInput({ ...input, [e.target.name]: e.target.value });
+    props.setEmail(e.target.value);
   };
   const handleLanguageChange = (e) => {
     props.setLanguage(e.target.value);
@@ -79,16 +90,44 @@ const Register = (props) => {
             label={localize[props.language - 1].label}
             variant="filled"
             name="email"
-            value={input.email}
+            value={props.email}
             onChange={handleChange}
           />
-          <div className="button">
-            {localize[props.language - 1].get_started}{" "}
-            <ChevronRightIcon fontSize="large" />
-          </div>
+          {props.email != "" &&
+          props.email.includes("@") &&
+          (props.email.includes(".com") ||
+            props.email.includes(".org") ||
+            props.email.includes(".io")) ? (
+            <Link to="/register/2">
+              <div className="button">
+                {localize[props.language - 1].get_started}{" "}
+                <ChevronRightIcon fontSize="large" />
+              </div>
+            </Link>
+          ) : (
+            <div className="button">
+              {localize[props.language - 1].get_started}{" "}
+              <ChevronRightIcon fontSize="large" />
+            </div>
+          )}
         </div>
       </div>
-      <div className="Footer">footer</div>
+      <div className="register-footer">
+        <h2>{localize[props.language - 1].h22}</h2>
+        <p>{localize[props.language - 1].p1}</p>
+
+        <p>{localize[props.language - 1].p2}</p>
+        <p>{localize[props.language - 1].p3}</p>
+
+        <p>
+          {localize[props.language - 1].p4}{" "}
+          <a href="https://github.com/firatmelih">Github</a>
+          {localize[props.language - 1].locale == "en"
+            ? null
+            : " " + localize[props.language - 1].p44}
+        </p>
+        <p>{localize[props.language - 1].p5}</p>
+      </div>
     </div>
   );
 };
