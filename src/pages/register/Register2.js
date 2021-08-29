@@ -4,7 +4,7 @@ import { Select, MenuItem, TextField } from "@material-ui/core";
 import LanguageIcon from "@material-ui/icons/Language";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import React, { useState } from "react";
 
 const localize = [
@@ -62,6 +62,20 @@ const Register2 = (props) => {
   const handleLanguageChange = (e) => {
     props.setLanguage(e.target.value);
   };
+  const handleLogin = (e) => {
+    if (
+      props.email != "" &&
+      props.email.includes("@") &&
+      (props.email.includes(".com") ||
+        props.email.includes(".org") ||
+        props.email.includes(".io")) &&
+      input.password.length > 3
+    ) {
+      props.setAuthorized(true);
+      localStorage.setItem("auth", true);
+      <Redirect to="/"></Redirect>;
+    }
+  };
   return (
     <div style={{ background: "white" }} className="Login Register2">
       <div className="Navbar">
@@ -83,6 +97,7 @@ const Register2 = (props) => {
             id="filled-basic"
             label={localize[props.language - 1].email}
             variant="outlined"
+            autoComplete="off"
             name="email"
             value={props.email}
             onChange={(e) => {
@@ -92,6 +107,7 @@ const Register2 = (props) => {
           <br />
           <TextField
             className="Input"
+            type="password"
             id="filled-basic"
             label={localize[props.language - 1].password}
             variant="outlined"
@@ -99,7 +115,9 @@ const Register2 = (props) => {
             value={input.password}
             onChange={handleChange}
           />
-          <div className="button">{localize[props.language - 1].end_up}</div>
+          <div onClick={handleLogin} className="button">
+            {localize[props.language - 1].end_up}
+          </div>
         </div>
       </div>
 

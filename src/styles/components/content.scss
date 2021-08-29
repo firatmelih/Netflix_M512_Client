@@ -63,7 +63,6 @@
         }
         video {
           width: 14vw;
-          height: auto;
           border-radius: 3px 3px 0 0;
         }
 
@@ -76,9 +75,13 @@
           }
           &:nth-child(7) {
             transform: scale(1.3, 1.3);
-            padding-right: 35vw;
+            padding-right: 50vw;
             position: flex;
             z-index: 3;
+            transition: 0s !important;
+            .mute-button {
+              margin-right: 51vw;
+            }
           }
           &:nth-child(8) {
             transform: scale(1.3, 1.3);
@@ -88,9 +91,14 @@
           }
           &:nth-child(14) {
             transform: scale(1.3, 1.3);
-            padding-right: 655px;
+            padding-right: 50vw;
             position: flex;
             z-index: 3;
+            transition: 0s;
+
+            .mute-button {
+              margin-right: 51vw;
+            }
           }
           &:nth-child(16) {
             transform: scale(1.3, 1.3);
@@ -123,9 +131,13 @@
           background: var(--main-background-color);
           margin: 0;
           padding: 0;
+          // border-bottom: 1px black solid;
+          // border-left: 1px black solid;
+          // border-right: 1px black solid;
+
           border-radius: 0 0 7.5px 7.5px !important;
-          // box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-          //   rgba(0, 0, 0, 0.22) 0px 10px 10px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+            rgba(0, 0, 0, 0.22) 0px 10px 10px;
 
           .buttons-area {
             display: flex;
@@ -271,8 +283,8 @@
   padding-top: 60px;
   position: absolute;
   left: 0px;
-  width: 55px;
-  height: 90px;
+  width: 75px;
+  height: 100%;
   z-index: 15;
   background-color: transparent;
   color: transparent;
@@ -282,6 +294,7 @@
   right: 0 !important;
   margin: -45px;
   margin-right: 20px;
+  padding: 0;
   top: 35 !important;
   z-index: 34343;
 

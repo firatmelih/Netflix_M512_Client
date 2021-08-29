@@ -13,7 +13,6 @@ const App = () => {
       setAuthorized(false);
     }
   }, []);
-  console.log(authorized);
   if (authorized) {
     return (
       <AuthorizedRoutes authorized={authorized} setAuthorized={setAuthorized} />

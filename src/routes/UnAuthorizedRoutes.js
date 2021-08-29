@@ -26,6 +26,8 @@ function UnAuthorizedRoutes(props) {
         </Route>
         <Route exact path="/register/2">
           <Register2
+            authorized={props.authorized}
+            setAuthorized={props.setAuthorized}
             language={language}
             setLanguage={setLanguage}
             email={email}
@@ -45,7 +47,7 @@ function UnAuthorizedRoutes(props) {
         <Route exact path="/*">
           <Redirect
             to={{
-              pathname: "/register",
+              pathname: "/login",
             }}
           />
         </Route>

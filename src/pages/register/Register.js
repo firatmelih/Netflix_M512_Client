@@ -86,6 +86,7 @@ const Register = (props) => {
         <div className="email-area">
           <TextField
             className="Input"
+            autoComplete="off"
             id="filled-basic"
             label={localize[props.language - 1].label}
             variant="filled"

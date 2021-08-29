@@ -161,18 +161,14 @@ export const Navbar = () => {
                 src="https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png"
                 alt=""
               />
-              <ArrowDropDown style={{ fontSize: "large" }} fontSize="large" />
-              {/* <div className="profile-dropdown">
-                <ul>
-                  <li
-                    onClick={() => {
-                      localStorage.setItem("auth", false);
-                    }}
-                  >
-                    
-                  </li>
-                </ul>
-              </div> */}
+              <ArrowDropDown
+                style={
+                  anchorEl == null
+                    ? { fontSize: "large" }
+                    : { transform: "rotate(180deg)", fontSize: "large" }
+                }
+                fontSize="large"
+              />
             </div>
             <StyledMenu
               id="customized-menu"
