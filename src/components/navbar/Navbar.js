@@ -9,10 +9,52 @@ import {
   VolumeOff,
   VolumeUp,
 } from "@material-ui/icons";
+import { Link } from "react-router-dom";
+import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+import DraftsIcon from "@material-ui/icons/Drafts";
+import SendIcon from "@material-ui/icons/Send";
+
+const StyledMenu = withStyles({
+  paper: {
+    border: "1px solid black",
+  },
+})((props) => (
+  <Menu
+    elevation={0}
+    getContentAnchorEl={null}
+    anchorOrigin={{
+      vertical: "bottom",
+      horizontal: "center",
+    }}
+    transformOrigin={{
+      vertical: "top",
+      horizontal: "center",
+    }}
+    {...props}
+  />
+));
+
+const StyledMenuItem = withStyles((theme) => ({}))(MenuItem);
 
 export const Navbar = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const [hover, setHover] = useState(false);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   const [mute, setMute] = useState(true);
   window.addEventListener("scroll", (event) => {
     if (window.pageYOffset > 0) {
@@ -24,11 +66,9 @@ export const Navbar = () => {
   return (
     <div
       onMouseEnter={() => {
-        console.log(hover);
         setHover(true);
       }}
       onMouseLeave={() => {
-        console.log(hover);
         setHover(false);
       }}
       className="NavbarContains"
@@ -61,9 +101,6 @@ export const Navbar = () => {
         />
       )}
       <div
-        onClick={(e) => {
-          console.log(e);
-        }}
         className="Navbar"
         style={
           scrolled
@@ -119,13 +156,51 @@ export const Navbar = () => {
             </button>
           </div>
           <div className="right-element">
-            <div className="profile">
+            <div className="profile" onClick={handleClick}>
               <img
                 src="https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png"
                 alt=""
               />
               <ArrowDropDown style={{ fontSize: "large" }} fontSize="large" />
+              {/* <div className="profile-dropdown">
+                <ul>
+                  <li
+                    onClick={() => {
+                      localStorage.setItem("auth", false);
+                    }}
+                  >
+                    
+                  </li>
+                </ul>
+              </div> */}
             </div>
+            <StyledMenu
+              id="customized-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+              className="profile-dropdown"
+            >
+              <StyledMenuItem>
+                <ListItemIcon>
+                  <DraftsIcon fontSize="small" />
+                </ListItemIcon>
+                <ListItemText primary="Drafts" />
+              </StyledMenuItem>
+              <a style={{ textDecoration: "none" }} href="/register">
+                <StyledMenuItem
+                  onClick={() => {
+                    localStorage.setItem("auth", false);
+                  }}
+                >
+                  <ListItemIcon>
+                    <InboxIcon fontSize="small" />
+                  </ListItemIcon>
+                  <ListItemText primary="Log Out" />
+                </StyledMenuItem>
+              </a>
+            </StyledMenu>
           </div>
         </div>
       </div>

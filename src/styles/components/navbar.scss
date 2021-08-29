@@ -139,6 +139,32 @@
           border-radius: 5px;
           height: 32px;
         }
+        .profile-dropdown {
+          display: flex;
+          text-align: center;
+          position: absolute;
+          justify-content: space-around;
+          right: 5vw;
+          top: 7vh;
+          width: 100px;
+          background: var(--main-background-color);
+          ul {
+            list-style: none;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            li {
+              a {
+                text-decoration: none;
+                color: white;
+                &:hover {
+                  color: red;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -163,5 +189,42 @@
     z-index: 34343;
     color: white;
     border: 2px solid white;
+  }
+}
+
+.profile-dropdown {
+  div {
+    &:nth-child(3) {
+      background-color: var(--main-background-color) !important;
+      color: var(--main-color);
+      ul {
+        li {
+          div {
+            svg {
+              fill: white;
+            }
+          }
+          &:hover {
+            background-color: #1f1f1f;
+            div {
+              &:nth-child(2) {
+                span {
+                  color: red;
+                }
+              }
+              svg {
+                fill: red;
+              }
+            }
+          }
+        }
+      }
+      a {
+        color: white;
+        &:hover {
+          color: red;
+        }
+      }
+    }
   }
 }
