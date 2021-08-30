@@ -187,7 +187,7 @@ export const Navbar = () => {
                 </ListItemIcon>
                 <ListItemText primary="Drafts" />
               </StyledMenuItem>
-              <a style={{ textDecoration: "none" }} href="/register">
+              <a style={{ textDecoration: "none" }} href="/login">
                 <StyledMenuItem
                   onClick={() => {
                     localStorage.setItem("auth", false);

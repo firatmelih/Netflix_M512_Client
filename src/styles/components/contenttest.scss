@@ -1,10 +1,12 @@
 .ContentTest {
+  overflow-x: hidden;
   position: absolute;
   top: 100vh;
   width: 100vw;
   height: auto;
   display: flex;
   flex-direction: column;
+  padding-bottom: 20vh;
   h2 {
     color: var(--main-color);
     padding: 25px 0 25px 24px;
@@ -62,9 +64,10 @@
 }
 
 .ContentTestItem {
+  transition: 0.5s !important;
   &.true {
     position: flex;
-    transform: scale(1.3, 1.3);
+    transform: scale(1.4, 1.4);
     z-index: 3;
   }
   width: 100vw;
@@ -79,13 +82,203 @@
       min-width: 125px;
       height: auto;
       width: 15vw;
+      @media only screen and (max-width: 1000px) {
+        & {
+          width: 40vw;
+        }
+      }
     }
     video {
-      border-radius: 5px;
+      border-radius: 5px 5px 0 0;
       min-width: 125px;
       height: auto;
       width: 15vw;
+      @media only screen and (max-width: 1000px) {
+        & {
+          width: 40vw;
+        }
+      }
     }
+  }
+  display: flex;
+  flex-direction: column;
+  .lower-true {
+    @media only screen and(max-width:750px) {
+      * {
+        font-size: 0.5rem !important;
+      }
+    }
+    svg {
+      @media only screen and (max-width: 750px) {
+        & {
+          width: 15px !important;
+          height: 15px !important;
+        }
+      }
+    }
+    @media only screen and (max-width: 1000px) {
+      & {
+        width: 40vw;
+        position: absolute;
+        top: 22vw;
+      }
+    }
+    span {
+      color: white;
+    }
+    li {
+      color: white;
+    }
+    display: flex;
+    position: fixed;
+    top: 8.5vw;
+    border-radius: 5px;
+    min-width: 125px;
+    height: auto;
+    width: 15.2vw;
+    flex-direction: column;
+    z-index: 9999;
+    background: var(--main-background-color);
+    margin: 0;
+    padding: 0;
+    border-radius: 0 0 7.5px 7.5px !important;
+    box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
+
+    .buttons-area {
+      display: flex;
+      justify-content: space-between;
+      .left {
+        display: flex;
+        & > div {
+          cursor: pointer;
+        }
+
+        .play-button {
+          margin: 10px 3px 10px 10px;
+          border-radius: 100px !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: var(--main-color);
+          height: 27px;
+          width: 27px;
+          @media only screen and (max-width: 750px) {
+            & {
+              width: 20px;
+              height: 20px;
+            }
+          }
+          color: black !important;
+
+          a {
+            display: flex;
+            &:visited {
+              fill: black !important;
+            }
+            fill: black !important;
+            svg {
+              &:visited {
+                fill: black !important;
+              }
+              fill: black !important;
+            }
+          }
+
+          &:hover {
+            background-color: gray;
+          }
+        }
+        .left-button {
+          @media only screen and (max-width: 750px) {
+            & {
+              width: 19px;
+              height: 19px;
+            }
+          }
+          margin: 10px 3px 10px 3px;
+          border-radius: 100px !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: var(--main-background-color);
+          height: 26px;
+          border: 1px solid gray;
+          width: 26px;
+          color: white;
+          &:hover {
+            border: 1px solid white;
+          }
+        }
+      }
+      .right {
+        & > div {
+          cursor: pointer;
+        }
+        .right-button {
+          margin: 10px 10px 10px 10px;
+          border-radius: 100px !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: var(--main-background-color);
+          height: 26px;
+          border: 1px solid gray;
+          width: 26px;
+          @media only screen and (max-width: 750px) {
+            & {
+              width: 19px;
+              height: 19px;
+            }
+          }
+          color: white;
+          &:hover {
+            border: 1px solid white;
+          }
+        }
+      }
+    }
+    .item-info {
+      span {
+        &:nth-child(1) {
+          margin: 10px 0.5px 10px 10px !important;
+        }
+        &.match {
+          color: rgb(49, 149, 49);
+          font-weight: 500;
+        }
+        &.age {
+          border: 0.5px solid var(--main-color);
+          padding: 1px 3px 1px 3px;
+        }
+        &.HD {
+          border: 0.5px solid var(--main-color);
+          padding: 1px 3px 1px 3px;
+          font-size: 8px;
+          font-weight: 500;
+        }
+        margin: 10px 0.5px 0.5px 10px;
+        margin-left: 3px !important;
+        font-size: 11px;
+      }
+    }
+    .item-categories {
+      ul {
+        display: flex;
+        font-size: 11px;
+        li {
+          margin: 10px 10px 15px 10px;
+
+          &:nth-child(1) {
+            margin: 10px 10px 15px -30px;
+            list-style: none;
+          }
+        }
+      }
+    }
+  }
+  .lower-false {
+    display: none;
+    z-index: -9999;
   }
 }
 

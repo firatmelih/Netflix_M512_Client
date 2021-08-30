@@ -6,17 +6,9 @@ import ContentTestItem from "./ContentTestItem";
 import { ArrowForwardIos } from "@material-ui/icons";
 
 const ContentTest = () => {
-  var tvSlider = document.querySelector(".TV-Shows");
-  var comedySlider = document.querySelector(".Comedy");
-  var scifiSlider = document.querySelector(".Sci-Fi");
-
-  useEffect(() => {
-    tvSlider = document.querySelector(".TV-Shows");
-    comedySlider = document.querySelector(".Comedy");
-    scifiSlider = document.querySelector(".Sci-Fi");
-  }, []);
-
   const [slide, setSlide] = useState(0);
+  const [slide2, setSlide2] = useState(0);
+  const [slide3, setSlide3] = useState(0);
 
   const handleTvSlider = (direction) => {
     if (direction == "next") {
@@ -40,17 +32,41 @@ const ContentTest = () => {
 
   const handleComedySlider = (direction) => {
     if (direction == "next") {
-      comedySlider.scrollLeft += window.innerWidth;
+      if (slide2 > 0) {
+        setSlide2(0);
+        return;
+      }
+      setSlide2(slide2 - window.innerWidth);
     } else {
-      comedySlider.scrollLeft -= window.innerWidth;
+      if (slide2 == 0 || slide2 > 0) {
+        setSlide2(0);
+        return;
+      }
+      setSlide2(slide2 + window.innerWidth);
+    }
+    if (slide2 > 0) {
+      setSlide2(0);
+      return;
     }
   };
 
   const handleScifiSlider = (direction) => {
     if (direction == "next") {
-      scifiSlider.scrollLeft += window.innerWidth;
+      if (slide3 > 0) {
+        setSlide3(0);
+        return;
+      }
+      setSlide3(slide3 - window.innerWidth);
     } else {
-      scifiSlider.scrollLeft -= window.innerWidth;
+      if (slide3 == 0 || slide3 > 0) {
+        setSlide3(0);
+        return;
+      }
+      setSlide3(slide3 + window.innerWidth);
+    }
+    if (slide3 > 0) {
+      setSlide3(0);
+      return;
     }
   };
 
@@ -70,34 +86,154 @@ const ContentTest = () => {
           style={{
             transition: "0.9s",
             transform: `matrix(1, 0, 0, 1, ${slide}, 0)`,
-            zIndex: "11",
+            zIndex: "12",
           }}
           className="TV-Shows"
         >
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
         </div>
         <div
           style={{
@@ -123,17 +259,69 @@ const ContentTest = () => {
         >
           <ArrowBackIosIcon />
         </div>
-        <div className="Comedy">
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
+        <div
+          style={{
+            transition: "0.9s",
+            transform: `matrix(1, 0, 0, 1, ${slide2}, 0)`,
+            zIndex: "11",
+          }}
+          className="Comedy"
+        >
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
         </div>
         <div
+          style={{
+            transition: "0.9s",
+            transform: `matrix(1, 0, 0, 1, ${-48}, 0)`,
+            zIndex: "15",
+          }}
           onClick={(e) => {
             handleComedySlider("next");
           }}
@@ -152,17 +340,69 @@ const ContentTest = () => {
         >
           <ArrowBackIosIcon />
         </div>
-        <div className="Sci-Fi">
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
-          <ContentTestItem />
+        <div
+          style={{
+            transition: "0.9s",
+            transform: `matrix(1, 0, 0, 1, ${slide3}, 0)`,
+            zIndex: "10",
+          }}
+          className="Sci-Fi"
+        >
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
+          <ContentTestItem
+            movieName={"Bio Hackers"}
+            id={1}
+            srcVideo={"/video/content2.mp4"}
+            src={"/image/content2.jpg"}
+          />
         </div>
         <div
+          style={{
+            transition: "0.9s",
+            transform: `matrix(1, 0, 0, 1, ${-48}, 0)`,
+            zIndex: "15",
+          }}
           onClick={(e) => {
             handleScifiSlider("next");
           }}

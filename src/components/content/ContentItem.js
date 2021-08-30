@@ -37,6 +37,7 @@ export const ContentItem = (props) => {
           </div>
         </div>
       ) : (
+        // eslint-disable-next-line jsx-a11y/alt-text
         <img
           onMouseEnter={(e) => {
             setIsFocused(true);

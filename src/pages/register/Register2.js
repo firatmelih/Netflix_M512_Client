@@ -77,7 +77,7 @@ const Register2 = (props) => {
     }
   };
   return (
-    <div style={{ background: "white" }} className="Login Register2">
+    <div style={{ background: "white" }} className="Register2">
       <div className="Navbar">
         <div className="left">
           <img src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg" />

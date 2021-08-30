@@ -3,6 +3,12 @@
   padding: 0;
   margin: 0;
 
+  @media only screen and (max-width: 1000px) {
+    & {
+      overflow-x: hidden !important;
+    }
+  }
+
   .image-wrapper {
     z-index: 2;
     width: 100vw;
@@ -243,6 +249,7 @@
   }
 
   .Footer {
+    overflow-x: hidden !important;
     position: absolute;
     height: 40%;
     width: 100vw;
@@ -260,6 +267,11 @@
     @media only screen and (max-width: 1000px) {
       & {
         padding-left: 35px;
+        width: 90vw;
+        overflow-x: hidden !important;
+      }
+      * {
+        overflow-x: hidden !important;
       }
     }
 
@@ -267,9 +279,10 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
+
       p {
         display: flex;
-        width: 1000px;
+        width: auto;
         text-align: start;
         align-items: flex-start;
       }
@@ -285,7 +298,7 @@
           grid-template-rows: 50px;
           @media only screen and (max-width: 1000px) {
             & {
-              grid-template-columns: 20vw 20vw;
+              grid-template-columns: 25vw 25vw;
               grid-template-rows: 50px;
             }
           }
