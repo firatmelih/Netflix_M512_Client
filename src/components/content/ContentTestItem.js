@@ -4,8 +4,8 @@ import { Add, PlayArrow, ThumbUpOutlined } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import ThumbDownOutlinedIcon from "@material-ui/icons/ThumbDownOutlined";
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
-import VolumeUpIcon from "@material-ui/icons/VolumeUp";
-import VolumeOffIcon from "@material-ui/icons/VolumeOff";
+// import VolumeUpIcon from "@material-ui/icons/VolumeUp";
+// import VolumeOffIcon from "@material-ui/icons/VolumeOff";
 
 const ContentTestItem = (props) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -35,7 +35,13 @@ const ContentTestItem = (props) => {
             </video>
           </Link>
         ) : (
-          <img className="image-container" src="/image/content1.jpg" />
+          <Link exact to={`/watch/${props.id}`}>
+            <img
+              alt="bannerImage"
+              className="image-container"
+              src="/image/content1.jpg"
+            />
+          </Link>
         )}
       </div>
       <div

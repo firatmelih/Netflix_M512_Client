@@ -1,7 +1,7 @@
-import React, { useRef, useState, useEffect } from "react";
+/* eslint-disable eqeqeq */
+import React, { useState } from "react";
 import "../../styles/components/contenttest.scss";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import ContentTestItem from "./ContentTestItem";
 import { ArrowForwardIos } from "@material-ui/icons";
 

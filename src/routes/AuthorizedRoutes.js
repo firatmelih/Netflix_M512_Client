@@ -4,7 +4,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import React, { Suspense, lazy, useState } from "react";
+import React from "react";
 import Home from "../pages/home/Home";
 import Watch from "../pages/watch/Watch";
 

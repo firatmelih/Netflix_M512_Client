@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import "../../styles/components/content.scss";
 import { ContentItem } from "./ContentItem";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";

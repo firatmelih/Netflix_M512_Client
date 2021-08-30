@@ -1,13 +1,13 @@
 import { Info, PlayArrow } from "@material-ui/icons";
 import "../../styles/components/banner.scss";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
 
 const Banner = (props) => {
   return (
     <div className="Banner">
       <div>
-        <img src="/image/banner1_title.webp" />
+        <img alt="movieTitle" src="/image/banner1_title.webp" />
         <h2 style={props.hover ? { color: "white" } : null}>GO FOR THE KILL</h2>
         <p style={props.hover ? { color: "white" } : null}>
           After awakening from a four-year coma, a former assassin wreaks

@@ -1,10 +1,8 @@
 import "../../styles/pages/login.scss";
 import "../../styles/pages/register.scss";
 
-import { Select, MenuItem, TextField } from "@material-ui/core";
+import { Select, TextField } from "@material-ui/core";
 import LanguageIcon from "@material-ui/icons/Language";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { Link, Redirect } from "react-router-dom";
 import React, { useState } from "react";
 
@@ -59,6 +57,7 @@ const Login = (props) => {
   };
   const handleLogin = (e) => {
     if (
+      // eslint-disable-next-line eqeqeq
       input.email != "" &&
       input.email.includes("@") &&
       (input.email.includes(".com") ||
@@ -75,12 +74,18 @@ const Login = (props) => {
     <div className="Login Register">
       <div className="Navbar">
         <div className="left">
-          <img src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg" />
+          <img
+            alt="logo"
+            src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg"
+          />
         </div>
       </div>
 
       <div className="image-wrapper">
-        <img src={`/image/${localize[props.language - 1].locale}.jpg`} />
+        <img
+          alt="background"
+          src={`/image/${localize[props.language - 1].locale}.jpg`}
+        />
       </div>
       <div className="inputs-area">
         <div className="login-form">

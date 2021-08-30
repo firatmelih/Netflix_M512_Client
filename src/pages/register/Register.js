@@ -1,10 +1,9 @@
 import "../../styles/pages/register.scss";
-import { Select, MenuItem, TextField } from "@material-ui/core";
+import { Select, TextField } from "@material-ui/core";
 import LanguageIcon from "@material-ui/icons/Language";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
 
 const localize = [
   {
@@ -53,7 +52,10 @@ const Register = (props) => {
     <div className="Register">
       <div className="Navbar">
         <div className="left">
-          <img src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg" />
+          <img
+            alt="logo"
+            src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg"
+          />
         </div>
         <div className="right">
           <LanguageIcon fontSize="small" />
@@ -77,7 +79,10 @@ const Register = (props) => {
       </div>
 
       <div className="image-wrapper">
-        <img src={`/image/${localize[props.language - 1].locale}.jpg`} />
+        <img
+          alt="background"
+          src={`/image/${localize[props.language - 1].locale}.jpg`}
+        />
       </div>
       <div className="inputs-area">
         <h1>{localize[props.language - 1].h1}</h1>
@@ -94,23 +99,27 @@ const Register = (props) => {
             value={props.email}
             onChange={handleChange}
           />
-          {props.email != "" &&
-          props.email.includes("@") &&
-          (props.email.includes(".com") ||
-            props.email.includes(".org") ||
-            props.email.includes(".io")) ? (
-            <Link to="/register/2">
+
+          {
+            // eslint-disable-next-line eqeqeq
+            props.email != "" &&
+            props.email.includes("@") &&
+            (props.email.includes(".com") ||
+              props.email.includes(".org") ||
+              props.email.includes(".io")) ? (
+              <Link to="/register/2">
+                <div className="button">
+                  {localize[props.language - 1].get_started}{" "}
+                  <ChevronRightIcon fontSize="large" />
+                </div>
+              </Link>
+            ) : (
               <div className="button">
                 {localize[props.language - 1].get_started}{" "}
                 <ChevronRightIcon fontSize="large" />
               </div>
-            </Link>
-          ) : (
-            <div className="button">
-              {localize[props.language - 1].get_started}{" "}
-              <ChevronRightIcon fontSize="large" />
-            </div>
-          )}
+            )
+          }
         </div>
       </div>
       <div className="register-footer">
@@ -123,9 +132,12 @@ const Register = (props) => {
         <p>
           {localize[props.language - 1].p4}{" "}
           <a href="https://github.com/firatmelih">Github</a>
-          {localize[props.language - 1].locale == "en"
-            ? null
-            : " " + localize[props.language - 1].p44}
+          {
+            // eslint-disable-next-line eqeqeq
+            localize[props.language - 1].locale == "en"
+              ? null
+              : " " + localize[props.language - 1].p44
+          }
         </p>
         <p>{localize[props.language - 1].p5}</p>
       </div>

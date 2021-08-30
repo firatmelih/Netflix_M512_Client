@@ -1,5 +1,5 @@
+/* eslint-disable eqeqeq */
 import "./styles/main.scss";
-import { Home } from "./pages/home/Home";
 import React, { useState, useEffect } from "react";
 import AuthorizedRoutes from "./routes/AuthorizedRoutes";
 import UnAuthorizedRoutes from "./routes/UnAuthorizedRoutes";

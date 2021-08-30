@@ -1,9 +1,7 @@
 import "../../styles/pages/register2.scss";
 
-import { Select, MenuItem, TextField } from "@material-ui/core";
+import { Select, TextField } from "@material-ui/core";
 import LanguageIcon from "@material-ui/icons/Language";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { Link, Redirect } from "react-router-dom";
 import React, { useState } from "react";
 
@@ -64,6 +62,7 @@ const Register2 = (props) => {
   };
   const handleLogin = (e) => {
     if (
+      // eslint-disable-next-line eqeqeq
       props.email != "" &&
       props.email.includes("@") &&
       (props.email.includes(".com") ||
@@ -80,7 +79,10 @@ const Register2 = (props) => {
     <div style={{ background: "white" }} className="Register2">
       <div className="Navbar">
         <div className="left">
-          <img src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg" />
+          <img
+            alt="logo"
+            src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg"
+          />
         </div>
         <div className="right">
           <Link to="/login">

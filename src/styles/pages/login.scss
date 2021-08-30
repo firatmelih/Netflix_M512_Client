@@ -18,27 +18,27 @@
     background: rgba(0, 0, 0, 0.4);
     background-image: -webkit-gradient(
       linear,
-      left bottom,
-      left top,
+      from bottom,
+      to top,
       from(rgba(0, 0, 0, 0.8)),
       color-stop(60%, rgba(0, 0, 0, 0)),
       to(rgba(0, 0, 0, 0.8))
     );
     background-image: -webkit-linear-gradient(
-      bottom,
+      to bottom,
       rgba(0, 0, 0, 0.8) 0,
       rgba(0, 0, 0, 0) 60%,
       rgba(0, 0, 0, 0.8) 100%
     );
     background-image: -moz-
       oldlinear-gradient(
-        bottom,
+        to bottom,
         rgba(0, 0, 0, 0.8) 0,
         rgba(0, 0, 0, 0) 60%,
         rgba(0, 0, 0, 0.8) 100%
       );
     background-image: -o-linear-gradient(
-      bottom,
+      to bottom,
       rgba(0, 0, 0, 0.8) 0,
       rgba(0, 0, 0, 0) 60%,
       rgba(0, 0, 0, 0.8) 100%
@@ -126,8 +126,6 @@
         &:hover {
           border: 1px solid white;
         }
-        & > div > ul {
-        }
       }
       .button {
         cursor: pointer;
@@ -189,9 +187,6 @@
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          span {
-          }
-
           input {
             margin: 0 5px 0 0;
             width: 20px;
@@ -363,8 +358,6 @@
           color: var(--main-color);
           &:hover {
             border: 1px solid white;
-          }
-          & > div > ul {
           }
         }
       }

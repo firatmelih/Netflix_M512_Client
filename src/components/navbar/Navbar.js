@@ -1,24 +1,21 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import "../../styles/components/navbar.scss";
 import Banner from "../banner/Banner";
 import React, { useState } from "react";
 import {
   Search,
   Notifications,
-  DetailsTwoTone,
   ArrowDropDown,
   VolumeOff,
   VolumeUp,
 } from "@material-ui/icons";
-import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import DraftsIcon from "@material-ui/icons/Drafts";
-import SendIcon from "@material-ui/icons/Send";
 
 const StyledMenu = withStyles({
   paper: {
@@ -95,6 +92,7 @@ export const Navbar = () => {
         </div>
       ) : (
         <img
+          alt="background"
           className="backGround"
           src="/image/banner.jpg"
           style={{ zIndex: "-1" }}
@@ -106,19 +104,26 @@ export const Navbar = () => {
           scrolled
             ? { background: "#141414" }
             : {
+                // eslint-disable-next-line no-dupe-keys
                 backgroundImage: `-moz- oldlinear-gradient(top,rgba(0,0,0,.7) 100%,rgba(0,0,0,0))`,
+                // eslint-disable-next-line no-dupe-keys
                 backgroundImage: `-o-linear-gradient(top,rgba(0,0,0,.7) 100%,rgba(0,0,0,0))`,
+                // eslint-disable-next-line no-dupe-keys
                 backgroundImage: `linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0))`,
               }
         }
       >
         <div className="left">
-          <a>
-            <img
-              alt="Logo"
-              src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg"
-            />
-          </a>
+          {
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
+            <a>
+              <img
+                alt="Logo"
+                src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg"
+              />
+            </a>
+          }
+
           <div className="browse">
             Browse <ArrowDropDown />
           </div>

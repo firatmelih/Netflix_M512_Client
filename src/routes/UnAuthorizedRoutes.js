@@ -4,11 +4,10 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import React, { Suspense, lazy, useState } from "react";
+import React, { useState } from "react";
 import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
 import Register2 from "../pages/register/Register2";
-const HomePage = lazy(() => import("../pages/home/Home"));
 
 function UnAuthorizedRoutes(props) {
   const [language, setLanguage] = useState(1);
