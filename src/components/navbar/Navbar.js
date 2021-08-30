@@ -119,6 +119,9 @@ export const Navbar = () => {
               src="https://cdn.worldvectorlogo.com/logos/netflix-3.svg"
             />
           </a>
+          <div className="browse">
+            Browse <ArrowDropDown />
+          </div>
           <ul>
             <li>
               <a>Home</a>
@@ -146,7 +149,7 @@ export const Navbar = () => {
             </div>
           </div>
           <div className="right-element">
-            <span>
+            <span className="kids">
               <a>KIDS</a>
             </span>
           </div>

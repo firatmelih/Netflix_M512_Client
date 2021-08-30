@@ -1,18 +1,65 @@
 .NavbarContains {
-  // background-image: url("https://cdn.discordapp.com/attachments/750658674078253158/878309678063452170/banner.jpg") !important;
   background-repeat: no-repeat;
   background-size: auto;
-  height: 65%;
+  background-position: center;
+  height: 125vh;
   width: 100vw;
-  padding-bottom: 2.5vw;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(20, 20, 20, 0) 0,
+    rgba(20, 20, 20, 0.15) 15%,
+    rgba(20, 20, 20, 0.35) 29%,
+    rgba(20, 20, 20, 0.58) 44%,
+    #141414 80%,
+    #141414 100%
+  );
+  background-image: -moz-
+    oldlinear-gradient(
+      top,
+      rgba(20, 20, 20, 0) 0,
+      rgba(20, 20, 20, 0.15) 15%,
+      rgba(20, 20, 20, 0.35) 29%,
+      rgba(20, 20, 20, 0.58) 44%,
+      #141414 68%,
+      #141414 100%
+    );
+  background-image: linear-gradient(
+    to bottom,
+    rgba(20, 20, 20, 0) 0,
+    rgba(20, 20, 20, 0.15) 15%,
+    rgba(20, 20, 20, 0.35) 29%,
+    rgba(20, 20, 20, 0.58) 44%,
+    #141414 95%,
+    #141414 100%
+  );
+  background-size: 100% 100%;
+  background-position: 0 top;
+  background-repeat: repeat-x;
+  background-color: transparent;
+  opacity: 1;
+
   .backGround {
+    transition: opacity 0.4s cubic-bezier(0.665, 0.235, 0.265, 0.8) 0s !important;
     z-index: -1;
     position: absolute;
     left: 0;
     top: 0;
     object-fit: cover;
     width: 100vw;
-    height: 100vh;
+    height: 125vh;
+
+    @media only screen and (max-width: 1000px) {
+      & {
+        transform: translateX(-55vw);
+        width: 155vw;
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      & {
+        transform: translateX(-150vw);
+        width: 250vw;
+      }
+    }
   }
 }
 
@@ -31,6 +78,7 @@
   height: 70px;
   display: flex;
   justify-content: space-between;
+
   /* background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,rgba(0,0,0,.7)),color-stop(10%,rgba(0,0,0,0))); */
   /* background-image: -webkit-linear-gradient(top,rgba(0,0,0,.7) 10%,rgba(0,0,0,0)); */
 
@@ -40,6 +88,11 @@
     padding: 0 60px;
     height: 68px;
     font-size: 14px;
+    @media only screen and (max-width: 600px) {
+      & {
+        padding-left: 10px;
+      }
+    }
     a {
       &:hover {
         cursor: pointer;
@@ -50,7 +103,26 @@
         display: flex;
       }
     }
+    .browse {
+      display: none;
+      @media only screen and (max-width: 1000px) {
+        & {
+          display: flex;
+          padding-left: 10px;
+          justify-content: center;
+          align-items: center;
+          .responsive-ul {
+            display: flex;
+          }
+        }
+      }
+    }
     ul {
+      @media only screen and (max-width: 1000px) {
+        & {
+          display: none;
+        }
+      }
       list-style-type: disc;
       margin-block-start: 1em;
       margin-block-end: 1em;
@@ -83,11 +155,30 @@
     display: flex;
     align-items: center;
     padding: 0 60px;
+    @media only screen and (max-width: 600px) {
+      & {
+        padding: 0 0;
+        align-items: left;
+        margin-right: 25px;
+      }
+    }
     height: 68px;
     font-size: 14px;
     .right-element {
+      .kids {
+        @media only screen and (max-width: 600px) {
+          & {
+            display: none;
+          }
+        }
+      }
       cursor: pointer;
       margin-right: 20px;
+      @media only screen and (max-width: 1000px) {
+        & {
+          margin-right: 0;
+        }
+      }
       button {
         display: inline-block;
         cursor: pointer;
@@ -172,7 +263,7 @@
   right: 0;
   bottom: 0;
   margin-bottom: 150px;
-  margin-right: 150px;
+  margin-right: 3vw;
   display: flex;
   justify-content: center;
   align-items: center;

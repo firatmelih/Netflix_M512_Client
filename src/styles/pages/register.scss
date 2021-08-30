@@ -49,7 +49,7 @@
       object-fit: cover;
       position: absolute;
       z-index: -10;
-      height: 80vh;
+      height: 100vh;
       width: 100%;
     }
   }
@@ -60,21 +60,34 @@
     padding-top: 17px;
     display: flex;
     position: absolute;
+    @media only screen and (max-width: 700px) {
+      margin: 0 !important;
+    }
+
     .left {
       padding: 0 3%;
       align-items: left;
       justify-content: left;
+      @media only screen and (max-width: 700px) {
+        padding: 0 !important;
+      }
       img {
         padding: 0;
         margin: 0;
         height: 45px;
         width: 166px;
+        @media only screen and (max-width: 700px) {
+          height: 22.5px !important;
+        }
       }
     }
     .right {
       margin-top: -5px;
       margin-right: -25px;
       padding-top: -25px;
+      @media only screen and (max-width: 700px) {
+        margin: 0 !important;
+      }
       display: flex;
       justify-content: space-between;
       svg {
@@ -125,6 +138,10 @@
         }
       }
       .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
         cursor: pointer;
         background-color: #d80913;
         color: white;
@@ -139,6 +156,11 @@
         margin-top: 0.5rem;
         margin: 25px;
         float: right;
+        @media only screen and (max-width: 700px) {
+          height: 22.5px !important;
+          padding: 7px 10px !important;
+          font-size: 0.7rem !important;
+        }
         &:hover {
           background-color: #ff000d;
         }
@@ -155,6 +177,16 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @media only screen and (max-width: 700px) {
+      h1 {
+        font-size: 2rem !important;
+        width: 400px !important;
+      }
+      h2 {
+        width: 400px !important;
+        font-size: 0.9rem !important;
+      }
+    }
     h1 {
       display: flex;
       justify-content: center;
@@ -173,7 +205,6 @@
       width: 800px;
       font-size: 1.625rem;
       font-weight: 400;
-      margin: 1rem auto;
     }
     h3 {
       display: flex;
@@ -197,9 +228,13 @@
           margin: 0;
         }
         width: 26vw;
-        min-width: 325px;
         height: 70px;
         background-color: white;
+        @media only screen and (max-width: 700px) {
+          & {
+            width: 55vw !important;
+          }
+        }
         & > label,
         div {
           display: flex;
@@ -215,7 +250,6 @@
         border-top-left-radius: 0;
         border-left: 1px solid #333;
         font-size: 1.475rem;
-        min-width: 150px;
         width: 12vw;
         max-height: 70px;
         min-height: 70px !important;
@@ -231,6 +265,11 @@
         -moz-border-radius: 3px;
         border-radius: 3px;
         padding: 0;
+        @media only screen and (max-width: 700px) {
+          & {
+            width: 35vw !important;
+          }
+        }
         &:hover {
           background-color: #ff000d;
         }

@@ -1,29 +1,36 @@
 .Banner {
   color: var(--main-background-color);
-  div {
-    h2 {
-      font-size: 5vw !important;
-    }
-  }
+
   img {
     padding: 10% 5% 5% 5%;
-    padding-top: 5vw;
+    padding-top: 10vh;
+    width: 35vw;
+    min-width: 350px;
   }
+
   h2 {
     font-weight: 1000;
-    padding-left: 150px;
-    font-size: 100px;
-    width: 25%;
+    padding-left: 5vw;
+    font-size: 3.6vw !important;
+    width: 15%;
+    min-width: 150px;
+  }
+  @media only screen and (max-width: 600px) {
+    h2 {
+      font-size: 7vw !important;
+    }
   }
   p {
-    margin-left: 150px !important;
+    padding-top: 1vh;
     font-size: larger;
-    width: 550px;
+    width: 40vw;
+    min-width: 300px;
+    padding-left: 5vw;
   }
   .buttons-div {
     padding-top: 25px;
     display: flex;
-    padding-left: 150px;
+    padding-left: 5vw;
     a {
       text-decoration: none;
       &:visited {
