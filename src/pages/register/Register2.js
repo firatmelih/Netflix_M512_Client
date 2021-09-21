@@ -2,8 +2,10 @@ import "../../styles/pages/register2.scss";
 
 import { Select, TextField } from "@material-ui/core";
 import LanguageIcon from "@material-ui/icons/Language";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import axios from "axios";
+import { Redirect } from "react-router";
 
 const localize = [
   {
@@ -51,7 +53,6 @@ const localize = [
 const Register2 = (props) => {
   const [input, setInput] = useState({
     language: 1,
-    email: "",
     password: "",
   });
   const handleChange = (e) => {
@@ -60,20 +61,28 @@ const Register2 = (props) => {
   const handleLanguageChange = (e) => {
     props.setLanguage(e.target.value);
   };
-  const handleLogin = (e) => {
-    if (
-      // eslint-disable-next-line eqeqeq
-      props.email != "" &&
-      props.email.includes("@") &&
-      (props.email.includes(".com") ||
-        props.email.includes(".org") ||
-        props.email.includes(".io")) &&
-      input.password.length > 3
-    ) {
-      props.setAuthorized(true);
-      localStorage.setItem("auth", true);
-      <Redirect to="/"></Redirect>;
-    }
+  const handleLogin = async (e) => {
+    const email = props.email;
+    const username = props.email.split("@")[0];
+    console.log(username);
+    const password = input.password;
+    e.preventDefault();
+    try {
+      await axios
+        .post("http://192.168.1.84:8800/api/auth/register", {
+          email,
+          username,
+          password,
+        })
+        .then((res) => {
+          if (res.data.username.length > 0) {
+            window.location.pathname = "/login";
+          } else {
+            window.location.pathname = "/register/2";
+          }
+        });
+    } catch (error) {}
+    return <Redirect to="/login"></Redirect>;
   };
   return (
     <div style={{ background: "white" }} className="Register2">

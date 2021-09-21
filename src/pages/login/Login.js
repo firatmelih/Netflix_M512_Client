@@ -3,8 +3,10 @@ import "../../styles/pages/register.scss";
 
 import { Select, TextField } from "@material-ui/core";
 import LanguageIcon from "@material-ui/icons/Language";
-import { Link, Redirect } from "react-router-dom";
-import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "../../context/authContext/AuthContext";
+import { login } from "../../context/authContext/apiCalls";
 
 const localize = [
   {
@@ -49,27 +51,25 @@ const Login = (props) => {
     email: "",
     password: "",
   });
+
+  const { dispatch } = useContext(AuthContext);
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
   const handleLanguageChange = (e) => {
     props.setLanguage(e.target.value);
   };
-  const handleLogin = (e) => {
-    if (
-      // eslint-disable-next-line eqeqeq
-      input.email != "" &&
-      input.email.includes("@") &&
-      (input.email.includes(".com") ||
-        input.email.includes(".org") ||
-        input.email.includes(".io")) &&
-      input.password.length > 3
-    ) {
-      props.setAuthorized(true);
-      localStorage.setItem("auth", true);
-      <Redirect to="/"></Redirect>;
+  const handleLogin = async (e) => {
+    const email = input.email;
+    const password = input.password;
+    await login({ email, password }, dispatch);
+    if (JSON.parse(localStorage.getItem("user")) !== null) {
+      window.location.reload(true);
+    } else {
+      window.location.reload(true);
     }
   };
+
   return (
     <div className="Login Register">
       <div className="Navbar">
@@ -93,7 +93,7 @@ const Login = (props) => {
           <TextField
             className="Input"
             autoComplete="off"
-            id="filled-basic"
+            id="filled-basic 1"
             label={localize[props.language - 1].email}
             variant="filled"
             name="email"
@@ -103,7 +103,7 @@ const Login = (props) => {
           <br />
           <TextField
             className="Input"
-            id="filled-basic"
+            id="filled-basic 2"
             type="password"
             label={localize[props.language - 1].password}
             variant="filled"
