@@ -1,24 +1,15 @@
-/* eslint-disable eqeqeq */
 import "./styles/main.scss";
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import AuthorizedRoutes from "./routes/AuthorizedRoutes";
 import UnAuthorizedRoutes from "./routes/UnAuthorizedRoutes";
+import { AuthContext } from "./context/authContext/AuthContext";
 
 const App = () => {
-  const [authorized, setAuthorized] = useState(false);
-  useEffect(() => {
-    if (localStorage.getItem("auth") == "true") {
-      setAuthorized(true);
-    } else {
-      setAuthorized(false);
-    }
-  }, []);
-  if (authorized) {
-    return (
-      <AuthorizedRoutes authorized={authorized} setAuthorized={setAuthorized} />
-    );
+  const user = useContext(AuthContext);
+  if (user.user) {
+    return <AuthorizedRoutes />;
   } else {
-    return <UnAuthorizedRoutes setAuthorized={setAuthorized} />;
+    return <UnAuthorizedRoutes />;
   }
 };
 
